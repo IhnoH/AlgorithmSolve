@@ -42,12 +42,14 @@ def bfsList(node):
             visit[i] = 1
 
 def dfs(node):
-    visit[node] = 1
-    print(node, end=' ')
-    for i in range(1, n+1):
-        if visit[i] or not gList[node][i] == 0: continue
-        dfs(i)
-
+    visited = []
+    needVisit = deque([node])
+    while needVisit:
+        node = needVisit.pop()
+        if node not in visited:
+            print(node, end=' ')
+            visited.append(node)
+            needVisit.extend(gMat[node])
 
 
 bfsMat(1)
@@ -58,7 +60,3 @@ print()
 
 
 
-a = [1, 2, 3, 4]
-print(list(permutations(a)))
-
-print(float('inf'))
