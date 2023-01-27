@@ -15,3 +15,22 @@ print(float('inf'))
 b = [3, 3, 4]
 a.extend(b)
 print(a)
+
+
+def solution(n):
+    rev_base = ''
+
+    # 3진법 변환
+    while n > 0:
+        n, mod = divmod(n, 3)
+        rev_base += str(mod)
+    print(rev_base)
+
+    res = 0
+    t = 1
+
+    for i in rev_base[::-1]:
+        res = res + t*int(i)
+        t *= 3
+    return res
+print(solution(45))
