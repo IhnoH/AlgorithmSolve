@@ -33,4 +33,4 @@ def solution(n):
         res = res + t*int(i)
         t *= 3
     return res
-print(solution(45))
+# print(solution(45))
