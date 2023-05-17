@@ -52,11 +52,3 @@ def dfs(node):
             needVisit.extend(gMat[node])
 
 
-# bfsMat(1)
-# print()
-# visit = [0]*(n+1)
-# dfs(1)
-# print()
-
-
-
